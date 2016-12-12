@@ -12,7 +12,7 @@ waitUntil(function(){
   //Something, something
   // return true if whatever you want have "happened"
   // return false if it must continue to wait
-}, trie, intervalInMiliseconds)
+}, tries, intervalInMiliseconds)
 .then(function(){
   //What you wanted to happen happened!
   //Congratulations!
