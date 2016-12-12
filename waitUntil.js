@@ -7,7 +7,7 @@
  *
  * Date: 2016-12-12
  */
-var waitUntil = function(testFunction, tries, intervalMiliseconds){
+var waitUntil = function(testFunction, tries, intervalInMiliseconds){
   var tries = tries || -1;
   return new Promise(function(resolve, reject){
     var intervalId = setInterval(function(){
@@ -18,6 +18,6 @@ var waitUntil = function(testFunction, tries, intervalMiliseconds){
         clearInterval(intervalId);
         reject();
       }
-    }, intervalMiliseconds || 50);
+    }, intervalInMiliseconds || 50);
   });
 }
