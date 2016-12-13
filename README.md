@@ -3,7 +3,7 @@ Generic wait until something happen function
 
 Useful to sync browser events, user interactions, and timed events when callbacks or promises are not available.
 <br />
-By default "waitUntil" only stops when whatever you want to happen "happen".
+By default "waitUntil", with value -1, only stops when whatever you want to happen "happen".
 If tries is set, it only will test if what you want happen "tries" times:
 ```
 var tries = 40;
