@@ -3,13 +3,13 @@ Generic wait until something happen function
 
 Useful to sync browser events, user interactions, and timed events when callbacks or promises are not available.
 <br />
-By default "waitUntil", with value -1, only stops when whatever you want to happen "happen".
-If tries is set, it only will test if what you want happen "tries" times:
+By default `waitUntil`, with value -1, only stops when whatever you want to happen "happen".
+If tries is set, it only will test if what you want happen `tries` times:
 ```
 var tries = 40;
 ```
 <br />
-By default "intervalInMiliseconds" value is 50.
+By default `intervalInMiliseconds` value is 50.
 This defines how long it'll take between each test loop:
 ```
 var intervalInMiliseconds = 100;
