@@ -22,7 +22,7 @@ var testFunction = function(){
 };
 ```
 <br />
-Simple and functional:
+For promise and legacy versions:
 ```
 waitUntil(testFunction, tries, intervalInMiliseconds)
 .then(function(){
@@ -33,4 +33,16 @@ waitUntil(testFunction, tries, intervalInMiliseconds)
   //Maybe it happened after, but who knows? Try increasing the "intervalInMiliseconds" and
   //  the "tries" values if you believe that it will actually happen.
 });
+```
+
+For callback version:
+```
+waitUntil(testFunction, tries, function(){
+  //What you wanted to happen happened!
+  //Congratulations!
+}, function(){
+  //What you wanted to happen never happened before tested if that "tries" times. 
+  //Maybe it happened after, but who knows? Try increasing the "intervalInMiliseconds" and
+  //  the "tries" values if you believe that it will actually happen.
+}, intervalInMiliseconds);
 ```
