@@ -14,7 +14,7 @@ This defines how long it'll take between each test loop:
 ```
 var intervalInMiliseconds = 100;
 ```
-
+<br />
 The test function should return true if whatever you want have "happened" or false if it must keep waiting:
 ```
 var testFunction = function(){
