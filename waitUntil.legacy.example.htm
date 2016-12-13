@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JS Wait Until - Legacy Version</title>
+</head>
+<body>
+    <h2>JS Wait Until - Legacy Version</h2>
+    <br />
+    <div id="isLegacy">Testing Support...</div>
+    <div>This should be true: <span id="maybeTrue"></span></div>
+    <div>This should be false: <span id="maybeFalse"></span></div>
+    <div>This should be false and take 10 seconds: <span id="maybeFalseAndLate"></span></div>
+    <div>This should be true, but with resolve binded later: <span id="maybeTrueAndLate"></span></div>
+    <script src="waitUntil.legacy.js"></script>
+    <script>
+		document.getElementById('isLegacy').innerHTML = (window.Promise) ? 'Supports Promise.'
+			: 'Promise is not supported.';
+		waitUntil(function() {
+			return true;
+		}, 10).then(function() {
+			document.getElementById('maybeTrue').innerHTML = 'True!';
+		}, function() {
+			document.getElementById('maybeTrue').innerHTML = 'False?';
+		});
+		waitUntil(function() {
+			return false;
+		}, 10).then(function() {
+			document.getElementById('maybeFalse').innerHTML = 'True?';
+		}, function() {
+			document.getElementById('maybeFalse').innerHTML = 'False!';
+		});
+		waitUntil(function() {
+			return false;
+		}, 10, 1000).then(function() {
+			document.getElementById('maybeFalseAndLate').innerHTML = 'True?';
+		}, function() {
+			document.getElementById('maybeFalseAndLate').innerHTML = 'False!';
+		});
+		var lateTrue = waitUntil(function() { return true; }, 2);
+		setTimeout(function(){
+			lateTrue.then(function(){
+				document.getElementById('maybeTrueAndLate').innerHTML = 'True!';
+			}).catch(function(){
+				document.getElementById('maybeTrueAndLate').innerHTML = 'False?';
+			});
+		}, 6000);
+    </script>
+</body>
+</html>

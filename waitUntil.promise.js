@@ -1,11 +1,13 @@
 /*!
- * Generic wait until something happen function v1.0
+ * Generic wait until something happen function v1.0-promise
  * https://github.com/andrehtissot/js-wait-until
+ * 
+ * Requires Promise Support
  *
  * Copyright André Augusto Tissot
  * Released under the MIT license
  *
- * Date: 2016-12-12
+ * Date: 2016-12-13
  */
 var waitUntil = function(testFunction, tries, intervalInMiliseconds){
   var tries = tries || -1;
