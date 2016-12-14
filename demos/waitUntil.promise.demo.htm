@@ -12,7 +12,7 @@
     <div>This should be false: <span id="maybeFalse"></span></div>
     <div>This should be false and take 10 seconds: <span id="maybeFalseAndLate"></span></div>
     <div>This should be true, but with resolve binded later: <span id="maybeTrueAndLate"></span></div>
-    <script src="waitUntil.js"></script>
+    <script src="../waitUntil.promise.js"></script>
     <script>
 		document.getElementById('isLegacy').innerHTML = (window.Promise) ? 'Supports Promise.'
 			: 'Promise is not supported.';
