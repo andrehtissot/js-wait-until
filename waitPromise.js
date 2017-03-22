@@ -9,14 +9,14 @@
  *
  * Date: 2017-03-22
  */
-var waitPromise = function(testPromise, tries){
-  var tries = tries || -1;
+var waitPromise = function(testPromise, tries, timeBetweenTries){
+  var tries = tries || -1, timeBetweenTries = timeBetweenTries || 100;
   return new Promise(function(resolve, reject){
     var test = function(){
       testPromise().then(resolve).catch(function(error){
         if(--tries === 0)
           reject(error);
-        else test();
+        else setTimeout(test, timeBetweenTries);
       });
     }
     test();
